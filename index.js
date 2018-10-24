@@ -118,7 +118,7 @@ async function getData (teamId) {
         let gameData = await getGameData(teamData.rowSet[0][1], queryDate);
         let message = generateScoreMessage(gameData, team, teamData[4] === 'W');
         console.log(message);
-        // sendMessage(message);
+        sendMessage(message);
     }    
 }
 
