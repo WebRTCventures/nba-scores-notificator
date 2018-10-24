@@ -1,7 +1,7 @@
 module.exports = {
     notificationTime: "08:30",          // The Format should be HH:mm. ie, 2 PM should be "14:00"
     teamToFollowId: 14,                 // Please look the desired id below.
-    phoneNumber: "50688888888",         // The Format shoudl be (CountryCode)Phone Number, no dashes nor + at the start
+    phoneNumber: "50688888888",         // The Format should be (CountryCode)Phone Number, no dashes nor + at the start
     nexmoAPIkey: "",                    // Found on your Nexmo Dashboard
     nexmoSecret: ""                     // Found on your Nexmo Dashboard
 }
