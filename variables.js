@@ -3,7 +3,9 @@ module.exports = {
     teamToFollowId: 14,                 // Please look the desired id below.
     phoneNumber: "50688888888",         // The Format should be (CountryCode)Phone Number, no dashes nor + at the start
     nexmoAPIkey: "",                    // Found on your Nexmo Dashboard
-    nexmoSecret: ""                     // Found on your Nexmo Dashboard
+    nexmoSecret: "",                    // Found on your Nexmo Dashboard
+    applicationId: "",                  // The applicationId of your Nexmo application
+    privateKey: ""                      // The path to the private.key file of your Nexmo application
 }
 
 /*
