@@ -2,6 +2,7 @@ const axios = require('axios');
 const parameters = require('./parameters');
 const variables = require('./variables');
 const schedule = require('node-schedule');
+const Nexmo = require('nexmo');
 
 
 function getTeam(teamId) {
@@ -77,34 +78,30 @@ async function getGameData(gameId) {
 async function sendMessage(message) {
     let number = variables.phoneNumber;
 
-    axios({
-      method: 'post',
-      url: 'https://api.nexmo.com/v0.1/messages',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
+    const nexmo = new Nexmo({
+      apiKey: variables.nexmoAPIkey,
+      apiSecret: variables.nexmoSecret,
+      applicationId: variables.applicationId,
+      privateKey: variables.privateKey
+    });
+
+    nexmo.channel.send(
+      { "type": "sms", "number": number },
+      { "type": "sms", "number": number },
+      {
+        "content": {
+          "type": "text",
+          "text": message
+        }
       },
-      auth: {
-        username: variables.nexmoAPIkey,
-        password: variables.nexmoSecret
-      },
-      data: {
-        "from": { "type": "sms", "number": number },
-        "to": { "type": "sms", "number": number },
-        "message": {
-          "content": {
-            "type": "text",
-            "text": message
-          }
+      (err, data) => {
+        if (err) {
+          console.log(err); 
+        } else {
+          console.log('Message sent successfully');
         }
       }
-    })
-      .then((response) => {
-        console.log('Message sent successfully');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    );
   }
 
 
