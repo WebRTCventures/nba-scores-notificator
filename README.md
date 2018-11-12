@@ -22,3 +22,6 @@ And run the application with the command
 
 That will be all, now you have a NBA score notification app running and you are 
 ready to begin receiving your favorite team scores on your phone.
+
+### Tutorial
+Read the complete tutorial in our [Blog](https://webrtc.ventures/2018/11/get-nba-scores-phone-new-nexmo-messages-api/).
